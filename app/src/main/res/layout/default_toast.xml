@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+     view添加到通过toast添加到window时，宽高会压缩；
+     这里的toast实现单利模式，当内容改变时，如果内容大小
+     变化，会有个跳动的过程。为了避免它，所以需要让toast
+     固定大小为全屏，所以用一个view支撑
+     -->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_toast"
+        android:gravity="center"
+        android:minWidth="100dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxEms="15"
+            android:textColor="@android:color/white"
+            tools:text="呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵哈哈哈哈哈哈哈" />
+
+
+    </LinearLayout>
+
+</FrameLayout>
